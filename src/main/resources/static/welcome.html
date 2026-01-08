@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Vishwa Bookstore Application'">Vishwa Bookstore Application</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header class="header">
+        <h1>📚 Welcome to <span class="highlight">Vishwa Bookstore</span></h1>
+        <p class="tagline">Find your next favorite book right here.</p>
+    </header>
+
+    <main class="main">
+        <section class="intro">
+            <p>Discover a wide collection of books across genres — from timeless classics to the latest bestsellers. 
+            Explore, read, and grow your world of imagination.</p>
+
+            <a th:href="@{/books}" class="btn">Explore Books</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Vishwa Bookstore Application. All rights reserved.</p>
+    </footer>
+</body>
+</html>
