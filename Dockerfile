@@ -2,20 +2,15 @@
 FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 
-# Copy wrapper scripts and folder
 COPY mvnw .
 COPY mvnw.cmd .
 COPY .mvn .mvn
-
-# Copy project files
 COPY pom.xml .
 COPY src ./src
 
-# Give execute permission to mvnw
 RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
 
-# Build jar
-RUN ./mvnw clean package
 
 # Run stage
 FROM eclipse-temurin:17-jdk-alpine
