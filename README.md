@@ -1,5 +1,8 @@
 # 📚 Bookstore API
 
+API is set to public acess with this below URL
+https://bookstore-api-xdoe.onrender.com
+
 A **Spring Boot** REST API for managing books with secure **JWT authentication**, validation, custom error handling, and clean response structures.
 
 ---
