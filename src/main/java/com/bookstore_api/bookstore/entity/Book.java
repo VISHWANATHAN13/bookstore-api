@@ -21,7 +21,7 @@ public class Book {
 	private Integer yearOfPublication;
 
     @OneToMany(mappedBy = "book")
-//    @JsonManagedReference
+
     private List<BookAuthor> bookAuthors;
 
     public List<BookAuthor> getBookAuthors() {

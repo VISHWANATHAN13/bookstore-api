@@ -34,14 +34,8 @@ public class BookService {
     public Book createBook(Book book) {
 
         // validation
-        List<APIError> APIError = bookValidator.validateCreateBookRequest(book);
-        // if not success
-        if(!APIError.isEmpty()){
-            throw new BadRequestException("bad request", APIError);
-//            throw new BadRequestException(APIError);
-        }
-
-        // if success
+        List<APIError> apiError = bookValidator.validateCreateBookRequest(book);
+        if (!apiError.isEmpty()) throw new BadRequestException("bad request", apiError);
 
         return bookRepository.save(book);
     }
@@ -108,7 +102,7 @@ public class BookService {
 
     public Book updateBook(Book incomingBook) {
         /*
-         * hard code the logic here
+         * hard code the logic here you wanted
          */
         List<Book> allBooks = bookRepository.findAll();
 

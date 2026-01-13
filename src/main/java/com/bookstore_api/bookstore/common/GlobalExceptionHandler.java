@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<APIResponse> handleBadRequestException(BadRequestException e){
+    public ResponseEntity<APIResponse> handleBadRequestException(BadRequestException e) {
 
         APIResponse apiResponse = new APIResponse();
         apiResponse.setStatus(HttpStatus.BAD_REQUEST.value());
@@ -28,5 +28,13 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiResponse);
     }
 
+    @ExceptionHandler
+    public ResponseEntity<APIResponse> handeAccessDeniedException(AccessDeniedException e) {
+
+        APIResponse apiResponse = new APIResponse();
+        apiResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+
+        return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
+    }
 
 }

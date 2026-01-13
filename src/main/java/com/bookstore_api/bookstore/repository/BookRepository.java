@@ -12,7 +12,6 @@ import com.bookstore_api.bookstore.entity.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
 
-//	List<Book> findAllByYearOfPublicationIn(Set<Integer> yop);
 
 	List<Book> findAllByYearOfPublicationInAndBookType(Set<Integer> yop, String bookType);
 

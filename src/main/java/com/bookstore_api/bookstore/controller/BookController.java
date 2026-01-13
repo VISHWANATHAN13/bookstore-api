@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import com.bookstore_api.bookstore.entity.Book;
 import com.bookstore_api.bookstore.service.BookService;
 
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/books")
 public class BookController {

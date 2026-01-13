@@ -11,27 +11,28 @@ import java.util.List;
 public class BookValidator {
     public List<APIError> validateCreateBookRequest(Book book) {
 
-        List<APIError> APIErrors = new ArrayList<>();
+        List<APIError> errors = new ArrayList<>();
 //        APIError error;
 
         //name
         if (book.getName() == null) {
             APIError APIError = new APIError("name", "Book name is null");
-            APIErrors.add(APIError);
+            errors.add(APIError);
         }
 
         //
         if (book.getYearOfPublication() == null) {
             APIError APIError = new APIError("year of publication", "year of publication is null");
-            APIErrors.add(APIError);
+            errors.add(APIError);
         }
 
         //book type
         if (book.getBookType() == null) {
             APIError APIError = new APIError("book type", "Book type is null");
-            APIErrors.add(APIError);
+            errors.add(APIError);
         }
+        System.out.println(errors.toArray().toString());
 
-        return APIErrors;
+        return errors;
     }
 }

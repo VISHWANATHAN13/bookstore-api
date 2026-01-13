@@ -14,8 +14,6 @@ public class BookAuthor {
 
     @ManyToOne
     @JoinColumn(name = "book_id",referencedColumnName = "id",nullable = false)
-//    @JsonBackReference
-//    @JsonIgnore
     private Book book;
     
     @ManyToOne
